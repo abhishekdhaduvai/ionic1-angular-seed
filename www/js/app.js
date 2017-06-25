@@ -2,10 +2,8 @@
 angular.module('biblio', ['ionic', 'ui.router','ngAnimate','ngMaterial'])
        .config(config)
        .run(run)
-       .controller('homeCtrl', homeCtrl)
 
-
-config.$inject = ['$stateProvider','$urlRouterProvider']
+config.$inject = ['$stateProvider','$urlRouterProvider'];
 
 function config($stateProvider, $urlProvider) {
   // Any garbage link will go to home
@@ -18,12 +16,9 @@ function config($stateProvider, $urlProvider) {
     })
 }
 
-function run(){
-  console.log("App started");
-}
-
-homeCtrl.$inject = ['$scope'];
-
-function homeCtrl($scope){
-
+run.$inject = ['$ionicPlatform'];
+function run($ionicPlatform){
+    $ionicPlatform.ready(function() {
+        console.log('ionic ready');
+    });
 }

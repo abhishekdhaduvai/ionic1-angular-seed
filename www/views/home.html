@@ -1,0 +1,72 @@
+<style>
+    .star-ratings-sprite {
+        background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2605/star-rating-sprite.png") repeat-x;
+        font-size: 0;
+        height: 21px;
+        line-height: 0;
+        overflow: hidden;
+        text-indent: -999em;
+        width: 110px;
+        margin: 0 auto;
+    }
+    .star-ratings-sprite-rating {
+        background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2605/star-rating-sprite.png") repeat-x;
+        background-position: 0 100%;
+        float: left;
+        height: 21px;
+        display:block;
+    }
+
+    .center{
+        text-align: center;
+    }
+    #scan_again{
+        position: fixed;
+        bottom: 0px;
+        background: #f44336;
+        width: 100%;
+        text-align: center;
+        padding: 0.5em;
+        color: white;
+        font-weight: bold;
+        font-size: 1.5em;
+        margin: 0px;
+    }
+    #main{
+        padding: 1em;
+    }
+    #title{
+        font-size: larger;
+        font-weight: bold;
+        width: 80%;
+        margin: auto;
+        padding: 1em;
+    }
+    md-divider{
+        margin: 10px 0px !important;
+    }
+    #show-more{
+        display: block;
+        margin: 1em auto;
+    }
+</style>
+
+<div>
+    <div id='main'>
+        <div id='image' class='center'>
+            <img ng-src = '{{book.book_picture}}' width=150px alt='book cover' style='height:225px;'></img>
+        </div>
+        <div id='title' class='center'>{{book.book_title}}</div>
+        <md-divider></md-divider>
+        <h3 class='center'>Good Reads</h3>
+        <div class="star-ratings-sprite">
+            <span id='rating' class="star-ratings-sprite-rating"></span>
+        </div>
+        <md-button class="md-raised md-primary" id='show-more'>See series</md-button>
+    </div>
+
+
+    <md-button id='scan_again'>
+        Scan Again
+    </md-button>
+</div>
